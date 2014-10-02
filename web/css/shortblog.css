@@ -1,0 +1,59 @@
+div#content div.page-left article.main section.short-blog {
+	
+}
+div#content div.page-left article.main section.short-blog header h2,
+div#content div.page-left article.main section.short-blog p{
+	font-style:italic;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+}
+div#content div.page-left article.main section.short-blog header h2{
+	padding-bottom:0px;
+	margin-bottom:0px;
+	font-style:normal;
+	font-size:16px;
+	font-weight:bolder;
+}
+div#content div.page-left article.main section.short-blog header div.sub-text {
+	font-size:12px;	
+	padding:0px;
+	margin:0px;
+	margin-bottom:5px;
+}
+div#content div.page-left article.main section.short-blog div.read-more{
+	width:550px;
+	height:48px;
+	margin-bottom:5px;
+	float:left;	
+	display:block;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}
+div#content div.page-left article.main section.short-blog:last-child div.read-more{
+	background:	none;
+}
+div#content div.page-left article.main section.short-blog div.read-more a.read-more {
+	background:#FFF;
+	background:url(../images/form/small-black-button.png) no-repeat;
+	width:119px;
+	height:38px;
+	float:right;
+	padding:8px 0 0 28px;
+	color:#fff;
+	font-size:18px;
+}
+section.prev a{
+	float:left;
+	text-decoration:none;
+	width:208px;
+	height:50px;
+	display:block;
+	background:url(../images/prev.jpg) no-repeat;
+}
+section.next a{
+	float:right;
+	text-decoration:none;
+	width:180px;
+	height:50px;
+	display:block;
+	background:url(../images/next.jpg) no-repeat;
+}

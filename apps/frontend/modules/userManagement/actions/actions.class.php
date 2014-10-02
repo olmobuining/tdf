@@ -1,0 +1,135 @@
+<?php
+
+/**
+ * userManagement actions.
+ *
+ * @package    tdf
+ * @subpackage backend
+ * @author     Olmo Buining
+ */
+class userManagementActions extends myActions	{
+	 
+	protected function checkFullAdmin() 
+	{
+		$login = new LoginClass();
+		$isLoggedIn = $login->check();
+		if($isLoggedIn) {
+			$userLogged = $login->getLoggedUser();
+			$this->forward404Unless($userLogged->Permission->level > sfConfig::get('app_permissions_full_admin'));
+		} else { 
+			$this->forward404('niet ingelogd');
+		}
+		return $userLogged;
+	}
+	
+	public function executeList(sfWebRequest $request) 
+	{
+		$this->userLogged = $this->checkFullAdmin();
+		
+		$this->users = Doctrine::getTable('User')->getAll();
+	
+	}
+	
+	public function executeEditUser(sfWebRequest $request) 
+	{
+		$this->userLogged = $this->checkFullAdmin();
+		
+		$userId = $request->getParameter('userId');
+		$this->user = Doctrine::getTable('User')->findOneById($userId);
+		$this->forward404Unless($this->user);
+		
+		$this->form = new editUserForm();
+		$this->form->setDefaults(
+			array(
+				'email' => $this->user->email
+				,'permission' => $this->user->Permission->id
+				,'rank' => $this->user->Rank->id
+				,'first_name' => $this->user->first_name
+				,'last_name' => $this->user->last_name
+			)
+		);
+		
+		
+		if ($request->isMethod('post')) {
+			$parameters = $request->getParameter('editUser');
+			$this->form->bind($parameters);
+				if($this->form->isValid()){
+				
+					$this->user->email = $this->form->getValue('email');
+					$this->user->permission_id = $this->form->getValue('permission');
+					$this->user->rank_id = $this->form->getValue('rank');
+					$this->user->first_name = $this->form->getValue('first_name');
+					$this->user->last_name = $this->form->getValue('last_name');
+					
+					$this->user->save();
+					
+					$messageToLog = "Gebruiker ".$this->user->username." is aangepast.";
+					$adminlog = new AdminLog();
+					$adminlog->created_at = time();
+					$adminlog->description = "editted user: ".$this->user->username." | door: ".$this->userLogged->username;
+					$adminlog->save();
+					$this->getUser()->setAttribute('errorMessage', $messageToLog);
+					sfContext::getInstance()->getConfiguration()->loadHelpers( 'Url' );
+					$this->redirect(url_for('userlist'));
+				} else {
+					$this->getUser()->setAttribute('errorMessage', "invalid");
+				}
+		} else {
+			
+		}
+	
+	}
+	
+	public function executeActivation(sfWebRequest $request) 
+	{
+		
+		$login = new LoginClass();
+		$isLoggedIn = $login->check();
+		if($isLoggedIn) {
+			$userLogged = $login->getLoggedUser();
+			if(!$userLogged->isActive()) {
+				$activation = $userLogged->getActivation();
+				$this->forward404Unless($activation);
+				if($request->getParameter('key') != $activation->description) {
+					$this->getUser()->setAttribute('errorMessage', "Je bent doorverwezen naar onze homepage, omdat je code niet overeen met onze gegevens.<br> Probeer de link in je email opnieuw of neem contact op met een van de guild leiders, (<a href=\"mailto:info@guild-tdf.nl\">info@guild-tdf.nl</a>)");
+					$this->redirect("/");
+				}
+				
+				$this->form = new preferRankForm();
+				
+				if($userLogged->rank_id != 2 && $userLogged->rank_id != 3 && $userLogged->rank_id != 4) {
+					$this->form->setDefaults(
+						array(
+							'rank' => $userLogged->rank_id
+						)
+					);
+				}
+				if ($request->isMethod('post')) {
+					$parameters = $request->getParameter('preferRank');
+					$this->form->bind($parameters);
+					if($this->form->isValid()){
+						$activation->value = time();
+						$activation->description = null;
+						$activation->save();
+						if($userLogged->permission_id == 2 || $userLogged->permission_id == 13) {
+							$userLogged->permission_id = 12;
+						}
+						
+						if($userLogged->rank_id != 2 && $userLogged->rank_id != 3 && $userLogged->rank_id != 4) {
+							$userLogged->rank_id = $this->form->getValue('rank');
+						}
+						$userLogged->save();
+						$this->getUser()->setAttribute('errorMessage', "Bedankt voor het aangeven van je voorkeur, je account is op actief gezet.");
+						$this->redirect("/");
+					}
+				}
+			} else {
+				$this->redirect("/");
+			}
+		} else { 
+			
+			$this->redirect('@login?url=/activate-me/'.$request->getParameter('key'));
+		}
+	}
+	
+}

@@ -1,0 +1,72 @@
+aside.tags article header h2, 
+aside.text article header h2 {
+	font-size:26px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}
+aside.tags p strong,
+aside.tags article p strong,
+aside.text p strong,
+aside.text article p strong {
+	font-weight:bold;	
+}
+aside.tags p,
+aside.tags article p,
+aside.text p,
+aside.text article p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	padding-bottom:5px;	
+}
+aside.tags p {
+	text-align:center;
+}
+aside.tags,
+aside.text {
+	margin-bottom:15px;	
+}
+aside p a {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#b62f15;	
+}
+aside.tags section.errors
+aside.text section.errors {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#b62f15;
+	line-height:18px;
+}
+a.tag {
+	white-space:nowrap;
+	text-decoration:none;
+	color:#000;
+}
+a.tag:hover{
+	color:#b62f15;
+}
+
+	aside.text table tr td:first-child {
+		font-weight:				bold;
+		width:						60%;
+	}
+	aside.text table tr td:not(:first-child) {
+		text-align:					center;
+	}
+	aside.text table tr td.yes {
+		height:						30px;
+		background: 				url(../images/yes.png) no-repeat 50% 50%;
+	}
+	aside.text table tr td.no {
+		height:						30px;
+		background: 				url(../images/no.png) no-repeat 50% 50%;
+	}
+	aside.text table tr {
+		border-bottom:			1px solid #ccc;
+	}
+	aside.text table tr td {
+		padding:					3px 0;
+	}
+	aside.text table {
+		width:						100%;
+		margin-bottom:			10px;
+	}

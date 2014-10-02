@@ -1,0 +1,50 @@
+all:
+  title_separator: ' - '
+  title_default: 'The Dutch Fellowship'
+  title_before: 'TDF'
+  character:
+    maxlevel:  80
+    maxcharacters: 10
+    minlevel:  1
+    milstones: [10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70, 75, 76, 77, 78, 79, 80]
+  event:
+    accept_all:   99
+    new:   49
+    public_new:   2
+    public_edit:   2
+    edit_all:     99
+    give_points:  99
+    edit:  49
+  image:
+    new: 99
+  permissions:
+    full_admin:  99
+    see_char_log:  1
+    see_admin_log: 99
+    activate_users: 99
+    edit_blogs: 99
+    tag:
+      new:        49
+      attach:     49
+      attach_all: 99
+    blog:
+      new:        49
+      edit:       99
+      delete:     99
+    character:
+      new:        9
+      edit:       9
+      edit_all:   99
+      delete_all: 49
+  apply:
+    source:             ['Via Google', 'Via gw2nl.nl', 'Via gw2guilds.org', 'Via Guild Wars 2 Guru', 'Via farshiverpeaks.com', 'Via farshiverpeaks.nl', 'Ingame recruitement', 'Via iemand namelijk,', 'Anders namelijk,']
+    gender:             ['Man', 'Vrouw']
+    yesno:              ['Ja', 'Nee']
+    countries:          ['Nederland', 'Belgie']
+    preference:         ['PvP', 'PvE', 'PvX']
+    professions:        ['Mesmer', 'Engineer', 'Thief', 'Guardian', 'Necromancer', 'Ranger', 'Warrior', 'Elementalist']
+    professionsEmpty:   ['----', 'Mesmer', 'Engineer', 'Thief', 'Guardian', 'Necromancer', 'Ranger', 'Warrior', 'Elementalist']
+    racesEmpty:         ['----', 'Norn', 'Charr', 'Sylvari', 'Asura', 'Human']
+    races:              ['Norn', 'Charr', 'Sylvari', 'Asura', 'Human']
+    playStyle:          ['Casual','Hardcore','Semi-hardcore', 'Mix']
+    labels:             { 'firstname' : 'Voornaam', 'surname': 'Achternaam', 'countries' : 'Land', 'date_of_birth' : 'Geboortedatum', 'gender' : 'Geslacht', 'char_profession' : 'Karakter Profession', 'char_name' : 'Karakter naam', 'char_race' : 'Karakter ras', 'char_level'    : 'Karakter level', 'preference'    : 'Voorkeur', 'username'   : 'Gebruikersnaam', 'password'   : 'Wachtwoord', 'password2'   : 'Wachtwoord check', 'playStyle'   : 'Wat voor soort speler ben je?', 'email'   : 'Email', 'motivation' : 'Motivatie', 'source'   : 'Hoe heb je ons gevonden?', 'source_explanation' : 'Verdere uitleg hoe je ons gevonden hebt', 'ts3' : 'Ben je bereid om Teamspeak 3 te gebruiken?', 'mic' : 'Ben je in bezit van een microfoon?' , 'otherguild' : 'Zit je in een andere guild?' , 'guilds' : 'Zo ja, Welke?' }

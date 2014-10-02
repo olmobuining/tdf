@@ -1,0 +1,13 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/08-Security
+
+default:
+  is_secure: false
+all:
+  .settings:
+    # Form security secret (CSRF protection)
+    csrf_secret:            c5190986e2a7f228d57b0196198ea9f1
+
+    # Output escaping settings
+    escaping_strategy:      true
+    escaping_method:        ESC_SPECIALCHARS

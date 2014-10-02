@@ -1,0 +1,24 @@
+aside article.random-image figure img,
+aside article.random-image figure {
+	display:block;
+	max-height:190px;
+	max-width:340px;
+	margin-bottom:15px;	
+}
+aside article.random-image figure img {
+	border-width:10px;
+	-moz-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	-webkit-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	padding:0px;
+	max-height:175px;
+	max-width:335px;
+}
+aside article.random-image header h2{
+	font-size:30px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}
+aside article.random-image {
+	width:340px;
+}

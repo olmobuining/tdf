@@ -1,0 +1,30 @@
+aside.related {
+	padding-left:0px;
+	width:390px;
+	float:left;
+}
+aside.related header h2.ringbearer {
+	font-size:28px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}
+aside.related a{
+	text-decoration:none;
+	color:#000;
+}
+aside.related a:hover{
+	color:#b62f15;
+}
+aside.related article.sub header h3 {
+	font-size:16px;
+	font-weight:bold;
+}
+aside.related article.sub p {
+	font-size:13px;
+	font-style:italic;
+}
+aside.related article.error {
+	font-size:14px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#b62f15;
+}

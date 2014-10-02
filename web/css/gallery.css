@@ -1,0 +1,117 @@
+div#content div.page-left article.albums {
+	width:560px;
+	padding-left:15px;
+	float:left;	
+	margin-bottom:10px;
+}
+
+article.albums header h2.ringbearer {
+	font-size:26px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}
+article.albums section.album figure img {
+	max-width:250px;
+	max-height:190px;
+}
+article.album-full section.image,
+article.albums section.album {
+	float:left;
+	width:250px;
+	margin-right:60px;
+	margin-bottom:20px;
+}
+article.album-full section.image {
+	margin-right:85px;
+}
+article.album-full section.image figure img{
+	max-height:200px;
+	max-width:250px;
+}
+article.album-full section.image.odd,
+article.albums section.album.odd {
+	margin-right:0px;	
+}
+article.album-full section.image header p,
+article.albums section.album header p{
+	position:absolute;
+	padding:5px;
+	height:35px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bolder;
+	opacity:1;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+	color:#000;
+	background-image:url(../images/albumname.png);
+	background-repeat:no-repeat;
+	min-width:250px;
+}
+
+
+/***** ALBUM ****/
+
+article.album-full {
+	padding-left:20px;
+	width:1000px;	
+}
+
+/**** IMAGe ****/
+
+article.image-full {
+	width:700px;
+	padding-left:20px;	
+	float:left;
+}
+aside.image {	
+	float:left;
+	width:250px !important;
+}
+aside.image p {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+aside.image p strong {
+	font-weight:bolder;	
+}
+aside.image p a{
+	font-size:13px;
+	line-height:15px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#b62f15;
+}
+/**** IMAGe NEXT ****/
+
+aside.nextImage {
+	margin-top:20px;	
+	float:left;
+	min-height:10px;
+	min-width:10px;
+	max-height:180px !important;
+	max-width:250px !important;
+}
+aside.nextImage figure {
+	/*
+	background-image:url(../images/ss-background-small-top.png), url(../images/ss-background-small-right.png), url(../images/ss-background-small-bottom.png), url(../images/ss-background-small-left.png);
+	background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+	background-position:top left, top right, bottom left, top left;
+	*/
+	display:block;
+	max-height:195px !important;
+	max-width:250px !important;
+	margin-bottom:15px;	
+}
+aside.nextImage figure img {
+	border-width:10px;
+	-moz-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	-webkit-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	padding:0px;
+	max-height:180px !important;
+	max-width:210px !important;
+}
+
+aside.nextImage header h3.ringbearer {
+	font-size:23px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;
+}

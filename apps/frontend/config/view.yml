@@ -1,0 +1,20 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/13-View
+
+default:
+  http_metas:
+    content-type: text/html
+
+  metas:
+    title:        %APP_TITLE_DEFAULT%
+    description:  Een Nederlandse Guild wars 2 guild.
+    keywords:     Guild wars 2, guild, guildwars, guild wars, tdf, The Dutch Fellowship, Dutch guild, Nederlandse guild, Nederlands, clan, arena net, arena, ncsoft, nederland clan, nederlandse clan
+    language:     nl
+    robots:       index, follow
+
+  stylesheets:    [reset.css, main.css, iefix.css: { condition: lt IE 9 }]
+
+  javascripts:    [cufon-yui.js, ringbearer.font.js, cufon.declare.js, fixhtml5.js: { condition: lt IE 9 }, https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js]
+
+  has_layout:     true
+  layout:         layout

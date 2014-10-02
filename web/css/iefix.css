@@ -1,0 +1,48 @@
+body, html {
+	background-image:url(../images/bg/topleft.png);
+	background-repeat:no-repeat;
+	background-position:top left;
+}
+acticle.random-image  {
+	margin-top:20px;	
+	border:1px solid #f00;
+	float:left;
+	min-height:10px;
+	min-width:10px;
+	max-height:180px !important;
+	max-width:250px !important;
+}
+acticle.random-image  figure {
+	display:block;
+	max-height:195px !important;
+	max-width:250px !important;
+	margin-bottom:15px;	
+}
+acticle.random-image figure img {
+	border-width:10px;
+	-moz-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	-webkit-border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	border-image:url("../images/ss-background-small-top.png") 10 10 10 10 repeat;
+	padding:0px;
+	max-height:180px !important;
+	max-width:210px !important;
+}
+acticle.random-image img {
+	border:2px solid #f00;
+}
+article.album-full section.image header p,
+article.albums section.album header p{
+	filter:alpha(opacity=60) !important; /* For IE8 and earlier */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=60)" !important;
+	filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60 !important);
+	height:20px !important;
+	color:#000;
+	background-color:#FFF;
+}
+select,
+textarea,
+input {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#000;
+	border:1px solid #b62f15;
+}

@@ -1,0 +1,8 @@
+indexSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+pwResetRequestSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+pwChangeSuccess:
+  stylesheets:    [forms.css, aside.css]

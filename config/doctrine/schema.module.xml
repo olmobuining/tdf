@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<orm-designer version="1.4.5.478">
+
+  <module import-format="DoctrineYml" import-path="schema.yml" name="tdf" visBkColor="15989236" visSizeX="44" visSizeX2="1033" visSizeY="188" visSizeY2="752">
+    <table name="User" visPositionX="28" visPositionY="91" visSizeX="0" visSizeX2="126" visSizeY="0" visSizeY2="143">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="username" required="true" size="100" type="string" unique="true"/>
+      <column name="password" required="true" size="255" type="string"/>
+      <column name="email" required="true" size="255" type="string">
+        <orm-properties>
+          <attribute name="email">true</attribute>
+        </orm-properties>
+      </column>
+      <column name="rank_id" required="true" type="integer"/>
+      <column name="permission_id" required="true" type="integer"/>
+      <column name="first_name" size="100" type="string"/>
+      <column name="last_name" size="100" type="string"/>
+      <column name="birthdate" type="timestamp"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="unique">true</attribute>
+            <attribute name="fields">[username]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="Rank" visPositionX="-24" visPositionY="-43" visSizeX="0" visSizeX2="104" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="100" type="string"/>
+    </table>
+    <table name="Permission" visPositionX="99" visPositionY="-56" visSizeX="0" visSizeX2="104" visSizeY="0" visSizeY2="59">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="100" type="string"/>
+      <column name="level" required="true" type="integer"/>
+    </table>
+    <table name="Post" visPositionX="240" visPositionY="-15" visSizeX="0" visSizeX2="127" visSizeY="0" visSizeY2="115">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="title" required="true" size="80" type="string"/>
+      <column name="text" required="true" type="string"/>
+      <column name="post_type_id" required="true" type="integer"/>
+      <column name="user_id" required="true" type="integer"/>
+      <column name="created_at" required="true" type="timestamp"/>
+      <column name="updated_at" type="timestamp"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="unique">true</attribute>
+            <attribute name="fields">[title]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="Post_Type" visPositionX="211" visPositionY="-146" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="80" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[name]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="Tag" visPositionX="543" visPositionY="-135" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="50" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[name]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="postTag" visPositionX="327" visPositionY="-168" visSizeX="0" visSizeX2="95" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="ID" primary="true" required="true" type="integer" unique="true"/>
+      <column name="post_id" required="true" type="integer"/>
+      <column name="tag_id" required="true" type="integer"/>
+    </table>
+    <table name="Image" visPositionX="481" visPositionY="124" visSizeX="0" visSizeX2="125" visSizeY="0" visSizeY2="115">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="folder" required="true" size="150" type="string"/>
+      <column name="src" required="true" size="150" type="string" unique="true"/>
+      <column name="title" required="true" size="80" type="string"/>
+      <column name="text" type="string"/>
+      <column name="user_id" required="true" type="integer"/>
+      <column name="created_at" required="true" type="timestamp"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[title]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="postImage" visPositionX="402" visPositionY="-13" visSizeX="0" visSizeX2="102" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="ID" primary="true" required="true" type="integer" unique="true"/>
+      <column name="image_id" required="true" type="integer"/>
+      <column name="post_id" required="true" type="integer"/>
+    </table>
+    <table name="imageTag" visPositionX="626" visPositionY="-27" visSizeX="0" visSizeX2="102" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="ID" primary="true" required="true" type="integer" unique="true"/>
+      <column name="image_id" required="true" type="integer"/>
+      <column name="tag_id" required="true" type="integer"/>
+    </table>
+    <table name="Comment" visPositionX="242" visPositionY="251" visSizeX="0" visSizeX2="125" visSizeY="0" visSizeY2="101">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="user_id" required="true" type="integer"/>
+      <column name="text" required="true" type="string"/>
+      <column name="created_at" required="true" type="timestamp"/>
+      <column name="post_id" type="integer"/>
+      <column name="image_id" type="integer"/>
+    </table>
+    <table name="Image_Type" visPositionX="893" visPositionY="96" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="80" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="options"></attribute>
+            <attribute name="fields">[name]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="ImageImageType" visPositionX="694" visPositionY="88" visSizeX="0" visSizeX2="128" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="ID" primary="true" required="true" type="integer" unique="true"/>
+      <column name="image_id" required="true" type="integer"/>
+      <column name="image_type_id" required="true" type="integer"/>
+    </table>
+    <table name="Album" visPositionX="914" visPositionY="208" visSizeX="0" visSizeX2="99" visSizeY="0" visSizeY2="45">
+      <column auto-increment="true" name="id" primary="true" required="true" type="integer" unique="true"/>
+      <column name="name" required="true" size="80" type="string"/>
+      <orm-properties>
+        <attribute name="actAs">
+          <attribute name="Sluggable">
+            <attribute name="fields">[name]</attribute>
+            <attribute name="canUpdate">true</attribute>
+          </attribute>
+        </attribute>
+      </orm-properties>
+    </table>
+    <table name="ImageAlbum" visPositionX="746" visPositionY="193" visSizeX="0" visSizeX2="102" visSizeY="0" visSizeY2="74">
+      <column auto-increment="true" name="ID" primary="true" required="true" type="integer" unique="true"/>
+      <column name="image_id" required="true" type="integer"/>
+      <column name="album_id" required="true" type="integer"/>
+    </table>
+    <orm-properties>
+      <attribute name="actAs">
+        <attribute name="Sluggable">
+          <attribute name="canUpdate">true</attribute>
+        </attribute>
+      </attribute>
+    </orm-properties>
+    <foreign-key from="User" inverse-alias="Rank" name="FK_User_Rank_id" owning-alias="Users" to="Rank">
+      <foreign-key-column from="rank_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="User" inverse-alias="Permission" name="FK_User_Permission_id" owning-alias="Users" to="Permission">
+      <foreign-key-column from="permission_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Post" inverse-alias="User" name="FK_Post_User_id" owning-alias="Posts" to="User">
+      <foreign-key-column from="user_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Post" inverse-alias="PostType" name="FK_Post_Post_Type_id" owning-alias="Posts" to="Post_Type">
+      <foreign-key-column from="post_type_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="postTag" name="FK_postTag_Post_id" to="Post">
+      <foreign-key-column from="post_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="postTag" name="FK_postTag_Tag_id" to="Tag">
+      <foreign-key-column from="tag_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Image" inverse-alias="User" name="FK_Image_User_id" owning-alias="Images" to="User">
+      <foreign-key-column from="user_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="postImage" name="FK_postImage_Post_id" to="Post">
+      <foreign-key-column from="post_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="postImage" name="FK_postImage_Image_id" to="Image">
+      <foreign-key-column from="image_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="imageTag" name="FK_imageTag_Tag_id" to="Tag">
+      <foreign-key-column from="tag_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="imageTag" name="FK_imageTag_Image_id" to="Image">
+      <foreign-key-column from="image_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Comment" inverse-alias="User" name="FK_Comment_User_id" owning-alias="Comments" to="User">
+      <foreign-key-column from="user_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Comment" inverse-alias="Post" name="FK_Comment_Post_id" owning-alias="Comments" to="Post">
+      <foreign-key-column from="post_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="Comment" inverse-alias="Image" name="FK_Comment_Image_id" owning-alias="Comments" to="Image">
+      <foreign-key-column from="image_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="ImageImageType" name="FK_ImageImageType_Image_id" to="Image">
+      <foreign-key-column from="image_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="ImageImageType" name="FK_ImageImageType_Image_Type_id" to="Image_Type">
+      <foreign-key-column from="image_type_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="ImageAlbum" name="FK_ImageAlbum_Image_id" to="Image">
+      <foreign-key-column from="image_id" to="id"/>
+    </foreign-key>
+    <foreign-key from="ImageAlbum" name="FK_ImageAlbum_Album_id" to="Album">
+      <foreign-key-column from="album_id" to="id"/>
+    </foreign-key>
+    <many-to-many-relation mn-table="postTag">
+      <many-to-many-foreign-key foreign-key="FK_postTag_Post_id" relation-alias="Posts"/>
+      <many-to-many-foreign-key foreign-key="FK_postTag_Tag_id" relation-alias="Tags"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="postImage">
+      <many-to-many-foreign-key foreign-key="FK_postImage_Post_id" relation-alias="Posts"/>
+      <many-to-many-foreign-key foreign-key="FK_postImage_Image_id" relation-alias="Images"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="imageTag">
+      <many-to-many-foreign-key foreign-key="FK_imageTag_Tag_id" relation-alias="Tags"/>
+      <many-to-many-foreign-key foreign-key="FK_imageTag_Image_id" relation-alias="Images"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="ImageImageType">
+      <many-to-many-foreign-key foreign-key="FK_ImageImageType_Image_id" relation-alias="Images"/>
+      <many-to-many-foreign-key foreign-key="FK_ImageImageType_Image_Type_id" relation-alias="ImageTypes"/>
+    </many-to-many-relation>
+    <many-to-many-relation mn-table="ImageAlbum">
+      <many-to-many-foreign-key foreign-key="FK_ImageAlbum_Image_id" relation-alias="Images"/>
+      <many-to-many-foreign-key foreign-key="FK_ImageAlbum_Album_id" relation-alias="Albums"/>
+    </many-to-many-relation>
+  </module>
+
+</orm-designer>

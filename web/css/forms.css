@@ -1,0 +1,293 @@
+div#content article.login {
+	margin-bottom:15px;
+	padding-left:15px;
+	width:500px;	
+	font-family:Arial, Helvetica, sans-serif;
+}
+div#content article.login select,
+div#content article.login label,
+div#content article.login input {
+	padding:0 10px;	
+	float:left;
+	width:300px;
+}
+div#content article.login select,
+div#content article.login input {
+	background-image:url(../images/form/input.png);
+	height:37px;
+	width:241px;
+}
+div#content article.login label {
+	padding:0px;	
+	line-height:37px;
+	width:139px;
+	font-size:16px;
+	font-weight:bolder;
+		
+}
+div.okSign {
+	background-image:url(../images/ok.jpg);	
+	display:block;
+	height:25px;
+	width:35px;
+	float:left;
+	margin-left:15px;
+	margin-top:5px;
+}
+div#content article.form button,
+div#content article.apply button,
+div#content article.login div.delete a,
+div#content article.login button {
+	background:#FFF;
+	background:url(../images/form/small-black-button.png) no-repeat;
+	width:139px;
+	height:38px;
+	display:block;
+	padding:0px;
+	color:#fff;
+	font-size:20px;
+	float:right;
+	margin:15px 0;
+	margin-right:100px;
+}
+div#content article.login button:hover {
+	color:#999;	
+}
+div#content article.login p.error {
+	clear:both;
+	width:400px;
+	text-align:right;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#b62f15;	
+}
+div#content article.login div.delete a {
+	padding:8px 0 0 35px;
+	width:104px;
+	height:30px;
+	margin:15px 0;
+}
+div#content article.login ul.error_list{
+	color:#b62f15;
+	float:right;
+	right:0px;
+	width:100px;
+	display:block;
+	min-heigt:30px;
+	vertical-align:middle;
+}
+div.page-left article.form,
+div#content article.apply {
+	width: 600px;
+	padding-left:20px;
+}
+div#content div.page-left article.form div.form div.row,
+div#content article.apply div.row {
+	width:600px;
+	min-height:30px;
+	margin-bottom:5px;	
+}
+article.form div.row div.label,
+div#content article.apply div.row div.label {
+	width:200px;	
+	float:left;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	vertical-align:middle;
+	height:17px;
+	padding:5px;
+	margin-right:5px;
+}
+article.form div.row input,
+div#content article.apply div.row input {
+	padding:2px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	height:20px;
+	width:256px;
+	-moz-box-shadow:    0px 0px 2px 1px #d28070;
+	-webkit-box-shadow: 0px 0px 2px 1px #d28070;
+	box-shadow:         0px 0px 2px 1px #d28070;
+	width:200px;	
+	float:left;
+}
+
+article.form label.small,
+form#apply label.small {
+	line-height:18px !important;
+	padding-top:0px !important;	
+}
+textarea#imageUpload_text,
+textarea#post_text,
+textarea#public_event_text,
+textarea#apply_extra {
+	padding:5px;
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	margin-top:5px;
+	width:256px;
+	-moz-box-shadow:    0px 0px 2px 1px #d28070;
+	-webkit-box-shadow: 0px 0px 2px 1px #d28070;
+	box-shadow:         0px 0px 2px 1px #d28070;
+}
+textarea#post_text {
+	clear:both;
+	width:550px;
+	height:300px;	
+}
+textarea#public_event_text {
+	clear:both;
+	width:550px;
+	height:100px;	
+}
+article.form div.row select,
+div#content article.apply select {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	float:left;
+	padding:2px;
+	background:none;
+	height:25px;
+	width:205px;
+	margin-top:5px;
+	-moz-box-shadow:    0px 0px 2px 1px #d28070;
+	-webkit-box-shadow: 0px 0px 2px 1px #d28070;
+	box-shadow:         0px 0px 2px 1px #d28070;
+}
+article.form div.row select.small-select,
+div#content article.apply select.small-select {
+	width:103px;
+}
+
+div.errorsForm {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#b62f15;
+	font-size:14px;
+}
+form#pwChange label {
+	font-size:12px !important;	
+}
+
+select { 
+	border:				1px solid #d28070;
+}
+/************* Public event form **********/
+#public_event input,
+#public_event select {
+	width:				55%;
+	
+}
+#public_event .small-select {
+	width:				25%;
+	margin-right:		20px;
+}
+#public_event .small-select:nth-child(3) {
+	float:				none;
+	position:			static;
+}
+#public_event label > span {
+	font:				normal 12px Arial;
+	color:				#B62F15;
+}
+/*** ========  USER MANAGEMENT  ====== ***/
+form#editUser button {
+	margin:						0	auto;
+	overflow:					hidden;
+	width:						80px;
+	background-color:		#000;
+	color:						#FFF;
+	height:						40px;
+	font-size:					24px;
+	clear:						both;
+}
+form#editUser input,
+form#editUser select {
+	padding:					2px;
+	border:						1px solid #ccc;
+	margin-bottom:			10px;
+	width: 						200px;
+}
+form#editUser label {
+	font-weight:				bold;
+	width:						100%;
+	display:						block;
+}
+form#editUser ul.error_list li {
+	color:						red;
+}
+
+/* == Apply form == */
+	div#content > article.apply > form#apply > section > p {
+		font-size:					12px;
+		margin-bottom:			5px;
+	}
+	div#content > article.apply {
+		width:						960px;
+	}
+	form#apply > section {
+		width:						48%;
+		float:							left;
+		margin-bottom:			30px;
+		padding-bottom:			10px;
+		border-bottom:			1px solid #999;
+	}
+	form#apply > section:nth-child(2) {
+		margin-bottom:			10px;
+	}
+	form#apply > section:first-child {
+		margin-right:				4%;
+	}
+	div#content > article.apply > form#apply > section > header > h4 {
+		background-image:	none;
+		font:							22px ringbearer;
+	}
+	form#apply > section > div.field {
+		width:						100%;
+		overflow:					hidden;
+		margin-bottom:			10px;
+	}
+	form#apply > section > div.field span,
+	form#apply > section > div.field textarea,
+	form#apply > section > div.field select,
+	form#apply > section > div.field input,
+	form#apply > section > div.field label {
+		display:						block;
+	}
+	form#apply > section > div.field label {
+		padding-bottom:			5px;
+		font-weight:				bold;
+	}
+	form#apply > section > div.field span {
+		color:						#f00;
+		font-weight:				bold;
+	}
+	form#apply > section > div.field textarea,
+	form#apply > section > div.field select,
+	form#apply > section > div.field input {
+		height:						25px;
+		width:						50%;
+		border:						1px solid #999;
+	}
+	form#apply > section > div.field textarea#apply_source_explanation {
+		width:						99%;
+		height:						40px;
+	}
+	form#apply > section > div.field textarea#apply_motivation {
+		width:						99%;
+		height:						160px;
+	}
+	div#content > article.apply > form#apply > button {
+		margin-right:				0px;
+		background-image:	none;
+		background-color:		#999;
+		width:						100%;
+	}
+	div#content > article.apply > form#apply > button:hover {
+		background-color:		#000;
+	}
+	
+	
+	
+	
+	

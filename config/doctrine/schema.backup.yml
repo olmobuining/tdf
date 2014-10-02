@@ -1,0 +1,408 @@
+User:
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [username]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    username:
+      unique: true
+      type: string(100)
+      notnull: true
+    password:
+      type: string(255)
+      notnull: true
+    email:
+      type: string(255)
+      notnull: true
+      email: true
+    rank_id:
+      type: integer
+      notnull: true
+    permission_id:
+      type: integer
+      notnull: true
+    first_name:
+      type: string(100)
+    last_name:
+      type: string(100)
+    birthdate:
+      type: timestamp
+  relations:
+    Rank:
+      class: Rank
+      foreignAlias: Users
+      local: rank_id
+      foreign: id
+    Permission:
+      class: Permission
+      foreignAlias: Users
+      local: permission_id
+      foreign: id
+Rank:
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(100)
+      notnull: true
+Permission:
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(100)
+      notnull: true
+    level:
+      type: integer
+      notnull: true
+Post:
+  actAs:
+    Sluggable:
+      unique: true
+      fields: [title]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    title:
+      type: string(80)
+      notnull: true
+    text:
+      type: string
+      notnull: true
+    post_type_id:
+      type: integer
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    created_at:
+      type: timestamp
+      notnull: true
+    updated_at:
+      type: timestamp
+  relations:
+    Users:
+      class: User
+      foreignAlias: Posts
+      local: user_id
+      foreign: id
+    PostType:
+      class: Post_Type
+      foreignAlias: Posts
+      local: post_type_id
+      foreign: id
+    Tags:
+      class: Tag
+      refClass: postTag
+      local: post_id
+      foreign: tag_id
+    Images:
+      class: Image
+      refClass: postImage
+      local: post_id
+      foreign: image_id
+Post_Type:
+  actAs:
+    Sluggable:
+      fields: [name]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(80)
+      notnull: true
+Tag:
+  actAs:
+    Sluggable:
+      fields: [name]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(50)
+      notnull: true
+  relations:
+    Posts:
+      class: Post
+      refClass: postTag
+      local: tag_id
+      foreign: post_id
+    Images:
+      class: Image
+      refClass: imageTag
+      local: tag_id
+      foreign: image_id
+postTag:
+  columns:
+    ID:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    post_id:
+      type: integer
+      notnull: true
+    tag_id:
+      type: integer
+      notnull: true
+  relations:
+    Post:
+      local: post_id
+      foreign: id
+    Tag:
+      local: tag_id
+      foreign: id
+Image:
+  actAs:
+    Sluggable:
+      fields: [title]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    folder:
+      type: string(150)
+      notnull: true
+    src:
+      unique: true
+      type: string(150)
+      notnull: true
+    title:
+      type: string(80)
+      notnull: true
+    text:
+      type: string
+    user_id:
+      type: integer
+      notnull: true
+    created_at:
+      type: timestamp
+      notnull: true
+  relations:
+    User:
+      class: User
+      foreignAlias: Images
+      local: user_id
+      foreign: id
+    Posts:
+      class: Post
+      refClass: postImage
+      local: image_id
+      foreign: post_id
+    Tags:
+      class: Tag
+      refClass: imageTag
+      local: image_id
+      foreign: tag_id
+    ImageTypes:
+      class: Image_Type
+      refClass: ImageImageType
+      local: image_id
+      foreign: image_type_id
+    Albums:
+      class: Album
+      refClass: ImageAlbum
+      local: image_id
+      foreign: album_id
+postImage:
+  columns:
+    ID:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    image_id:
+      type: integer
+      notnull: true
+    post_id:
+      type: integer
+      notnull: true
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+    Post:
+      local: post_id
+      foreign: id
+imageTag:
+  columns:
+    ID:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    image_id:
+      type: integer
+      notnull: true
+    tag_id:
+      type: integer
+      notnull: true
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+    Tag:
+      local: tag_id
+      foreign: id
+Comment:
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    user_id:
+      type: integer
+      notnull: true
+    text:
+      type: string
+      notnull: true
+    created_at:
+      type: timestamp
+      notnull: true
+    post_id:
+      type: integer
+    image_id:
+      type: integer
+  relations:
+    User:
+      class: User
+      foreignAlias: Comments
+      local: user_id
+      foreign: id
+    Post:
+      class: Post
+      foreignAlias: Comments
+      local: post_id
+      foreign: id
+    Image:
+      class: Image
+      foreignAlias: Comments
+      local: image_id
+      foreign: id
+Image_Type:
+  actAs:
+    Sluggable:
+      options: 
+      fields: [name]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(80)
+      notnull: true
+  relations:
+    Images:
+      class: Image
+      refClass: ImageImageType
+      local: image_type_id
+      foreign: image_id
+ImageImageType:
+  columns:
+    ID:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    image_id:
+      type: integer
+      notnull: true
+    image_type_id:
+      type: integer
+      notnull: true
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+    Image_Type:
+      local: image_type_id
+      foreign: id
+Album:
+  actAs:
+    Sluggable:
+      fields: [name]
+      canUpdate: true
+  columns:
+    id:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    name:
+      type: string(80)
+      notnull: true
+  relations:
+    Images:
+      class: Image
+      refClass: ImageAlbum
+      local: album_id
+      foreign: image_id
+ImageAlbum:
+  columns:
+    ID:
+      primary: true
+      unique: true
+      type: integer
+      notnull: true
+      autoincrement: true
+    image_id:
+      type: integer
+      notnull: true
+    album_id:
+      type: integer
+      notnull: true
+  relations:
+    Image:
+      local: image_id
+      foreign: id
+    Album:
+      local: album_id
+      foreign: id
+actAs:
+  Sluggable:
+    canUpdate: true

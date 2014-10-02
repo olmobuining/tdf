@@ -1,0 +1,43 @@
+indexSuccess:
+  stylesheets:    [related.css, aside.css]
+
+newBlogSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+imageUploadSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+singleInputSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+editBlogSuccess:
+  stylesheets:    [forms.css, aside.css]
+  javascripts:    [tiny_mce/tiny_mce.js]
+
+newTagSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+attachTagSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+attachImageTypeSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+attachImageAlbumSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+attachTagImageSuccess:
+  stylesheets:    [forms.css, aside.css]
+
+activateUserSuccess:
+  stylesheets:    [forms.css, aside.css]
+  
+userSuccess:
+  stylesheets:    [related.css, aside.css]
+  
+statisticsSuccess:
+  stylesheets:    [forms.css, aside.css]
+  javascripts:    [jquery.tablesorter.min.js]
+
+activityCheckSuccess:
+  javascripts:    [jquery.tablesorter.min.js]

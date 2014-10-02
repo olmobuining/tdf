@@ -1,0 +1,101 @@
+section.month h1.ringbearer,
+section.month h2.ringbearer{
+	margin:0 20px;
+	background-image:none !important;
+	display:inline;
+	font-size: 20px !important;
+}
+section.monthsContainer{
+	margin:0 auto;
+	height:60px;
+	width:800px;
+	text-align:center;
+}
+section.months {
+	width:1000px;
+	text-align:center;
+}
+section.month {
+}
+section.month h1.ringbearer {
+	font-size:36px !important;
+}
+section.month h2.ringbearer{
+	color:#666;
+}
+section.days,
+section.daysHeader {
+	padding-left:0px;	
+	width:1000px;
+}
+section.days{
+	height:120px;
+	margin-bottom:10px;	
+}
+section.days div.day,
+section.daysHeader div.day {
+	width:120px;
+	margin:0 5px;
+	padding:5px;
+	float:left;
+}
+section.daysHeader div.day h3 {
+	font-size:21px;	
+}
+section.days div.day {
+	border:#000 1px solid;
+	border-right:none;
+	margin:0px;
+	height:100px;
+	padding:5px;
+	width:130px;
+}
+section.days div.day.last {
+	border-right:#000 1px solid;
+}
+section.days div.day div.date {
+	font-size:12px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bolder;
+	color:#b62f15;
+}
+section.days div.day.today {
+	background-color:#CCC;	
+}
+section.events-list table tbody tr td a,
+section.days div.day div.data a {
+	color:#b62f15;
+}
+section.days div.day div.data {
+	line-height:120%;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;	
+}
+section.events-list header h3{
+	font-size:30px;
+	margin-bottom:10px;
+	background:url(../images/bg/titlebar-large.jpg) no-repeat bottom left;	
+}
+section.events-list table tbody tr td {
+	padding:7px;
+}
+div.day div.date a.add-event {
+	height:16px;
+	width:16px;
+	float:right;
+	background-image:url(images/bullet_add.png);
+}
+section.events-list section.color-info {
+	margin-right:25px;
+	float:right;	
+}
+section.events-list section.color-info div a{
+	font-size:14px;
+	line-height:150%;
+	font-family:Arial, Helvetica, sans-serif;
+}
+section.events-list table tbody tr td a.guild-event,
+section.days div.day div.data a.guild-event,
+section.events-list section.color-info div.guild-event a {
+	color:#348122;
+}

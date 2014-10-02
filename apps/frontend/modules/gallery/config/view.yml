@@ -1,0 +1,9 @@
+indexSuccess:
+  stylesheets:    [gallery.css, randomimage.css]
+
+albumSuccess:
+  stylesheets:    [gallery.css]
+
+imageSuccess:
+  stylesheets:    [gallery.css, prettyPhoto.css]
+  javascripts:    [jquery.prettyPhoto.js]

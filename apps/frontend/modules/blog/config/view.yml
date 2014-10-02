@@ -1,0 +1,6 @@
+itemSuccess:
+  stylesheets:    [related.css, randomimage.css, prettyPhoto.css]
+  javascripts:    [jquery.prettyPhoto.js]
+
+indexSuccess:
+  stylesheets:    [shortblog.css, randomimage.css, aside.css]

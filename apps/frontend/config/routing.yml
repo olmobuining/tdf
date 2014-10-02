@@ -1,0 +1,258 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+login:
+  url:   /login
+  param: { module: login, action: index }
+
+logout:
+  url:   /logout
+  param: { module: login, action: logout }
+
+register:
+  url:   /register
+  param: { module: register, action: new }
+
+apply:
+  url:   /apply
+  param: { module: apply, action: new }
+
+calendar:
+  url:   /calendar/*
+  param: { module: calendar, action: index }
+
+important:
+  url:   /belangrijke-informatie
+  param: { module: page, action: important }
+
+guild_roster:
+  url:   /guild-roster
+  param: { module: backend, action: roster }
+
+activate_user:
+  url:   /activate-user
+  param: { module: backend, action: activateUser }
+
+edit-blog:
+  url:   /edit-blog/:id
+  param: { module: backend, action: editBlog }
+
+new-image:
+  url:   /new-image
+  param: { module: backend, action: imageUpload }
+
+change:
+  url:   /change/:what/:id
+  param: { module: backend, action: singleInput }
+
+activate:
+  url:   /activate-me/:key
+  param: { module: userManagement, action: activation }
+
+## admin log
+
+adminlog:
+  url:   /adminlog
+  param: { module: backend, action: adminLog }
+
+activityCheckpage:
+  url:   /check-activity-members
+  param: { module: backend, action: activityCheck }
+
+
+
+## User/Character Pages
+
+user:
+  url:   /user/:slug
+  param: { module: backend, action: user }
+
+
+## 
+
+statistics:
+  url:   /statistics
+  param: { module: backend, action: statistics }
+
+new-characters:
+  url:   /new-characters
+  param: { module: backend, action: newChars }
+
+delete-char:
+  url:   /delete-char/:id
+  param: { module: character, action: deleteCharacter }
+
+
+
+
+### EVENT
+new-event:
+  url:   /new-event
+  param: { module: calendar, action: newEvent }
+
+new-public-event:
+  url:   /new-public-event/*
+  param: { module: calendar, action: newPublicEvent }
+
+edit-public-event:
+  url:   /edit/public-event/:id
+  param: { module: calendar, action: editPublicEvent }
+
+edit-event:
+  url:   /edit/event/:id
+  param: { module: calendar, action: editEvent }
+
+event:
+  url:   /event/:slug
+  param: { module: calendar, action: event }
+### END EVENT
+
+
+
+
+### reset ###
+reset-request:
+  url:   /pw-reset-request
+  param: { module: login, action: pwResetRequest }
+
+change-pw:
+  url:   /pw-change
+  param: { module: login, action: pwChange }
+
+##### end reset
+
+
+
+give-points:
+  url:   /give-points/:eventId
+  param: { module: calendar, action: givePoints }
+
+changeStatus:
+  url:   /changeStatus/:eventId/:charId/:changeTo
+  param: { module: calendar, action: charStatusChange }
+
+remove-char:
+  url:   /removeChar/:eventId
+  param: { module: character, action: removeFromEvent }
+
+user-list:
+  url:   /user-list
+  param: { module: register, action: index }
+
+add-character:
+  url:   /add-character
+  param: { module: character, action: add }
+
+tag:
+  url:   /tag/:slug
+  param: { module: tag, action: index }
+
+welcome:
+  url:   /welkom
+  param: { module: page, action: welcome }
+
+about_us:
+  url:   /about-us
+  param: { module: page, action: aboutUs }
+
+rules:
+  url:   /rules
+  param: { module: page, action: rules }
+
+donate:
+  url:   /donate
+  param: { module: page, action: donate }
+
+donate-thanks:
+  url:   /donate-thanks
+  param: { module: page, action: donateThanks }
+
+gallery:
+  url:   /gallery
+  param: { module: gallery, action: index }
+
+album:
+  url:   /gallery/album/:slug
+  param: { module: gallery, action: album }
+
+image:
+  url:   /gallery/:type/:type_slug/:image_slug
+  param: { module: gallery, action: image }
+
+blog_item:
+  url:   /:type/blog/:slug
+  param: { module: blog, action: item }
+
+blog:
+  url:   /:type/blog
+  param: { module: blog, action: index }
+
+blogpage:
+  url:   /:type/blog/page/:page
+  param: { module: blog, action: index }
+ 
+
+ ### USER MANAGEMENT ###
+ 
+userlist:
+  url:   /userlist
+  param: { module: userManagement, action: list }
+ 
+edit-user:
+  url:   /edit-user/:userId
+  param: { module: userManagement, action: editUser }
+ 
+ 
+ ##########################
+ 
+ 
+ 
+##### BACKEND ###########
+my_account:
+  url:   /my-account
+  param: { module: backend, action: index }
+
+addcharacter:
+  url:   /add-character
+  param: { module: character, action: add }
+
+post-blog:
+  url:   /post-blog/:type
+  param: { module: postForm, action: new }
+
+new-tag:
+  url:   /new-tag
+  param: { module: backend, action: newTag }
+
+attach-tag:
+  url:   /attach-tag
+  param: { module: backend, action: attachTag }
+
+attach-tag-image:
+  url:   /attach-tag-image
+  param: { module: backend, action: attachTagImage }
+
+attach-image-type:
+  url:   /attach-image-type
+  param: { module: backend, action: attachImageType }
+
+attach-image-album:
+  url:   /attach-image-album
+  param: { module: backend, action: attachImageAlbum }
+
+attach-image-blog:
+  url:   /attach-image-blog
+  param: { module: backend, action: attachImageBlog }
+
+# default rules
+homepage:
+  url:   /
+  param: { module: page, action: index }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*
